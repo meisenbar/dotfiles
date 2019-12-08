@@ -23,14 +23,16 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 
 " Language Server
-Plug 'prabirshrestha/async.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prabirshrestha/vim-lsp'
 
 " Git integration - Fugitive
+Plug 'tpope/vim-fugitive'
 
 " Typescript
 Plug 'leafgarland/typescript-vim' " Syntax Highlighting
-Plug 'Quramy/tsuquyomi' " Language Server
+" Plug 'Quramy/tsuquyomi' " Language Server
+Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 call plug#end()
 
 " General VIM Settings
@@ -40,6 +42,16 @@ colorscheme gruvbox
 :set bg=dark
 :GitGutterEnable
 
+" COC Configuration
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
+
 " Keymap
 map <C-n> :NERDTreeToggle<CR>
 
@@ -47,6 +59,6 @@ map <C-n> :NERDTreeToggle<CR>
 " Linter Settings
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tsserver', 'eslint'],
+\   'typescript': ['tsserver', 'tslint'],
 \   'vue': ['eslint']
 \}
