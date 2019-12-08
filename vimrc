@@ -1,4 +1,4 @@
-" Setup Plugins
+" Setup Plugin
 call plug#begin('~/.vim/plugged')
 "Color Theme -  Sublime Monokai
 Plug 'erichdongubler/vim-sublime-monokai'
@@ -9,7 +9,7 @@ Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter', {'on': 'GitGutterEnable'}
 
 " File Finder - FZF
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " File Menu - NERD Tree Sidebar
@@ -23,7 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 
-" Git integration - Fugitiv'e
+" Git integration - Fugitive
 call plug#end()
 
 " General VIM Settings
@@ -31,6 +31,7 @@ set number
 syntax on
 colorscheme gruvbox
 :set bg=dark
+:GitGutterEnable
 
 " Keymap
 map <C-n> :NERDTreeToggle<CR>
