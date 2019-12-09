@@ -5,6 +5,9 @@ Plug 'erichdongubler/vim-sublime-monokai'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 
+" Editorconfig
+Plug 'sgur/vim-editorconfig'
+
 " Git Gutter
 Plug 'airblade/vim-gitgutter', {'on': 'GitGutterEnable'}
 
@@ -29,10 +32,29 @@ Plug 'prabirshrestha/vim-lsp'
 " Git integration - Fugitive
 Plug 'tpope/vim-fugitive'
 
+" Prettier
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'markdown',
+    \ 'vue',
+    \ 'html'
+    \ ] }
+
 " Typescript
 Plug 'leafgarland/typescript-vim' " Syntax Highlighting
 " Plug 'Quramy/tsuquyomi' " Language Server
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+
+" C#
+Plug 'sheerun/vim-polyglot' " Syntax Highlighting
 call plug#end()
 
 " General VIM Settings
@@ -42,10 +64,14 @@ colorscheme gruvbox
 :set bg=dark
 :GitGutterEnable
 
+" add html syntax to dotnet razor files
+autocmd BufNewFile,BufRead *.cshtml set syntax=html
+
 " COC Configuration
 source ~/dotfiles/vim/vimrc_coc
 
 " Keymap
+silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " TypeScript
