@@ -66,6 +66,8 @@ syntax on
 colorscheme gruvbox
 :set bg=dark
 :GitGutterEnable
+" Faster Esc from Modes"
+set timeoutlen=1000 ttimeoutlen=0
 
 " Tabs
 let g:airline#extensions#tabline#enabled = 1
@@ -100,6 +102,9 @@ let g:fzf_colors =
 
 " COC Configuration
 source ~/dotfiles/vim/vimrc_coc
+
+" Commands
+command Gst Gstatus
 
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
