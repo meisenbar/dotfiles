@@ -5,6 +5,9 @@ Plug 'erichdongubler/vim-sublime-monokai'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 
+"Comments"
+Plug 'scrooloose/nerdcommenter'
+
 " Editorconfig
 Plug 'sgur/vim-editorconfig'
 
@@ -66,6 +69,9 @@ colorscheme gruvbox
 
 " add html syntax to dotnet razor files
 autocmd BufNewFile,BufRead *.cshtml set syntax=html
+
+"NERDCommenter"
+filetype plugin on
 
 " COC Configuration
 source ~/dotfiles/vim/vimrc_coc
