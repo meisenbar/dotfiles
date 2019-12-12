@@ -60,8 +60,19 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'sheerun/vim-polyglot' " Syntax Highlighting
 call plug#end()
 
+" Use UndoFiles
+" Let's save undo info!
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+
 " General VIM Settings
-set number
+set number relativenumber 
 syntax on
 colorscheme gruvbox
 :set bg=dark
@@ -109,6 +120,8 @@ command Gst Gstatus
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <S-PageDown> :bnext<CR>
+nnoremap <S-PageUp> :bprevious<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
