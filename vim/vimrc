@@ -85,6 +85,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_theme='base16_gruvbox_dark_hard'
 
+
 " Splits
 set splitbelow
 set splitright
@@ -94,6 +95,9 @@ autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
 " NERDCommenter
 filetype plugin on
+
+"NERD Tree"
+let NERDTreeMinimalUI=1
 
 " FZF 
 let g:fzf_colors =
