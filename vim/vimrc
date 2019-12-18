@@ -77,6 +77,8 @@ syntax on
 colorscheme gruvbox
 :set bg=dark
 :GitGutterEnable
+:set tabstop=4
+:set shiftwidth=4
 " Faster Esc from Modes"
 set timeoutlen=1000 ttimeoutlen=0
 
