@@ -6,7 +6,7 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 
 "Comments"
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 
 " Editorconfig
 Plug 'sgur/vim-editorconfig'
