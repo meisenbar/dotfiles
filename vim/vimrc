@@ -9,7 +9,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-commentary'
 
 " Editorconfig
-Plug 'sgur/vim-editorconfig'
+Plug 'editorconfig/editorconfig-vim'
 
 " Git Gutter
 Plug 'airblade/vim-gitgutter', {'on': 'GitGutterEnable'}
