@@ -1,5 +1,11 @@
-" Setup Plugin
+Setup Plugin
 call plug#begin('~/.vim/plugged')
+" Ghost Text Server to edit Text Areas in Browser
+Plug 'pandysong/ghost-text.vim'
+"
+" Comments
+Plug 'chrisbra/vim-commentary'
+
 "Color Theme -  Sublime Monokai
 Plug 'erichdongubler/vim-sublime-monokai'
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -53,6 +59,10 @@ Plug 'prettier/vim-prettier', {
 
 " Typescript
 Plug 'leafgarland/typescript-vim' " Syntax Highlighting
+
+" Vue 
+Plug 'posva/vim-vue'
+
 " Plug 'Quramy/tsuquyomi' " Language Server
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
