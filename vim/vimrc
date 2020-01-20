@@ -1,4 +1,4 @@
-Setup Plugin
+" Setup Plugin
 call plug#begin('~/.vim/plugged')
 " Ghost Text Server to edit Text Areas in Browser
 Plug 'pandysong/ghost-text.vim'
