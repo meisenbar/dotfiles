@@ -2,17 +2,13 @@
 call plug#begin('~/.vim/plugged')
 " Ghost Text Server to edit Text Areas in Browser
 Plug 'pandysong/ghost-text.vim'
-"
-" Comments
-Plug 'chrisbra/vim-commentary'
 
 "Color Theme -  Sublime Monokai
-Plug 'erichdongubler/vim-sublime-monokai'
-Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 
 "Comments"
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
@@ -57,14 +53,14 @@ Plug 'prettier/vim-prettier', {
     \ 'html'
     \ ] }
 
+" Vue
+" Plug 'posva/vim-vue'
+
 " Typescript
 Plug 'leafgarland/typescript-vim' " Syntax Highlighting
 
-" Vue 
-Plug 'posva/vim-vue'
-
 " Plug 'Quramy/tsuquyomi' " Language Server
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+" Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
 " C#
 Plug 'sheerun/vim-polyglot' " Syntax Highlighting
@@ -82,6 +78,9 @@ set undodir=~/.vim/undo-dir
 set undofile
 
 " General VIM Settings
+set regexpengine=1
+set lazyredraw
+set ttyfast
 set number relativenumber 
 syntax on
 colorscheme gruvbox
@@ -139,11 +138,12 @@ source ~/dotfiles/vim/vimrc_coc
 
 " Commands
 command Gst Gstatus
+cmap w!! w !sudo tee % > /dev/null
 
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <C-I> :Prettier<CR>
+nnoremap <C-I> :Format<CR>
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-J> <C-W><C-J>
