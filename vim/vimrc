@@ -1,5 +1,15 @@
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
+" Surround Brackets functionality
+Plug 'tpope/vim-surround'
+
+" CodeSnippets
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+
+" Start Screen
+Plug 'mhinz/vim-startify'
+
 " Ghost Text Server to edit Text Areas in Browser
 Plug 'pandysong/ghost-text.vim'
 
@@ -8,7 +18,11 @@ Plug 'morhetz/gruvbox'
 
 "Comments"
 " Plug 'tpope/vim-commentary'
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
+Plug 'scrooloose/nerdcommenter'
+
+" Surround Brackets
+Plug 'tpope/vim-surround'
 
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
@@ -58,9 +72,6 @@ Plug 'prettier/vim-prettier', {
 
 " Typescript
 Plug 'leafgarland/typescript-vim' " Syntax Highlighting
-
-" Plug 'Quramy/tsuquyomi' " Language Server
-" Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
 " C#
 Plug 'sheerun/vim-polyglot' " Syntax Highlighting
@@ -113,6 +124,26 @@ autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
 " NERDCommenter
 filetype plugin on
+
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
 
 "NERD Tree"
 let NERDTreeMinimalUI=1
