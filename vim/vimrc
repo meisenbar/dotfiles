@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 
 " CodeSnippets
-Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Start Screen
@@ -40,9 +39,6 @@ Plug 'scrooloose/nerdtree'
 " Status Bar - Air Bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Lint Engine
-Plug 'dense-analysis/ale'
 
 " Language Server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
