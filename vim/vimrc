@@ -1,6 +1,6 @@
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
-" Surround Brackets functionality
+" Surround Brackets
 Plug 'tpope/vim-surround'
 
 " CodeSnippets
@@ -19,9 +19,6 @@ Plug 'morhetz/gruvbox'
 " Plug 'tpope/vim-commentary'
 " Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdcommenter'
-
-" Surround Brackets
-Plug 'tpope/vim-surround'
 
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
@@ -42,26 +39,26 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Language Server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prabirshrestha/vim-lsp'
+"Plug 'prabirshrestha/vim-lsp'
 
 " Git integration - Fugitive
 Plug 'tpope/vim-fugitive'
 
 " Prettier
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-    \ 'javascript',
-    \ 'typescript',
-    \ 'css',
-    \ 'less',
-    \ 'scss',
-    \ 'json',
-    \ 'markdown',
-    \ 'vue',
-    \ 'html'
-    \ ] }
+"Plug 'prettier/vim-prettier', {
+  "\ 'do': 'npm install',
+  "\ 'branch': 'release/1.x',
+  "\ 'for': [
+    "\ 'javascript',
+    "\ 'typescript',
+    "\ 'css',
+    "\ 'less',
+    "\ 'scss',
+    "\ 'json',
+    "\ 'markdown',
+    "\ 'vue',
+    "\ 'html'
+    "\ ] }
 
 " Vue
 " Plug 'posva/vim-vue'
@@ -70,7 +67,7 @@ Plug 'prettier/vim-prettier', {
 Plug 'leafgarland/typescript-vim' " Syntax Highlighting
 
 " C#
-Plug 'sheerun/vim-polyglot' " Syntax Highlighting
+"Plug 'sheerun/vim-polyglot' " Syntax Highlighting has PROBLEMS with TS
 call plug#end()
 
 " Use UndoFiles
@@ -177,11 +174,3 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" TypeScript
-" Linter Settings
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'typescript': ['tsserver', 'tslint'],
-\   'vue': ['eslint']
-\}
