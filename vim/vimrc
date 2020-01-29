@@ -64,10 +64,12 @@ Plug 'tpope/vim-fugitive'
 " Plug 'posva/vim-vue'
 
 " Typescript
-Plug 'leafgarland/typescript-vim' " Syntax Highlighting
+"Plug 'leafgarland/typescript-vim' " Syntax Highlighting
+"Plug 'peitalin/vim-jsx-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " C#
-"Plug 'sheerun/vim-polyglot' " Syntax Highlighting has PROBLEMS with TS
 call plug#end()
 
 " Use UndoFiles
@@ -82,8 +84,8 @@ set undodir=~/.vim/undo-dir
 set undofile
 
 " General VIM Settings
-set regexpengine=1
-set lazyredraw
+"set regexpengine=1
+"set lazyredraw
 set ttyfast
 set number relativenumber 
 syntax on
