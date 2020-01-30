@@ -70,6 +70,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " C#
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Use UndoFiles
