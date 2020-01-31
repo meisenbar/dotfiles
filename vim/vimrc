@@ -1,5 +1,8 @@
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
+" Emmet
+Plug 'mattn/emmet-vim'
+
 " TagBar Plugin
 Plug 'majutsushi/tagbar'
 
