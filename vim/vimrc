@@ -1,5 +1,8 @@
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
+" TagBar Plugin
+Plug 'majutsushi/tagbar'
+
 " Surround Brackets
 Plug 'tpope/vim-surround'
 
@@ -10,7 +13,7 @@ Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-startify'
 
 " Ghost Text Server to edit Text Areas in Browser
-Plug 'pandysong/ghost-text.vim'
+"Plug 'pandysong/ghost-text.vim'
 
 "Color Theme -  Sublime Monokai
 Plug 'morhetz/gruvbox'
@@ -71,6 +74,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 " C#
 Plug 'sheerun/vim-polyglot'
+" Omnisharp
+Plug 'OmniSharp/omnisharp-vim'
+
 call plug#end()
 
 " Use UndoFiles
