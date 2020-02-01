@@ -50,25 +50,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Git integration - Fugitive
 Plug 'tpope/vim-fugitive'
 
-" Prettier
-"Plug 'prettier/vim-prettier', {
-  "\ 'do': 'npm install',
-  "\ 'branch': 'release/1.x',
-  "\ 'for': [
-    "\ 'javascript',
-    "\ 'typescript',
-    "\ 'css',
-    "\ 'less',
-    "\ 'scss',
-    "\ 'json',
-    "\ 'markdown',
-    "\ 'vue',
-    "\ 'html'
-    "\ ] }
-
-" Vue
-" Plug 'posva/vim-vue'
-
 " Typescript
 "Plug 'leafgarland/typescript-vim' " Syntax Highlighting
 "Plug 'peitalin/vim-jsx-typescript'
