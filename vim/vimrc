@@ -1,5 +1,8 @@
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
+" Indent Lines
+Plug 'yggdroot/indentline'
+
 " Emmet
 Plug 'mattn/emmet-vim'
 
