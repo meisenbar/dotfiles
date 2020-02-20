@@ -1,5 +1,8 @@
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
+" TableMode
+Plug 'dhruvasagar/vim-table-mode'
+
 " Indent Lines
 Plug 'yggdroot/indentline'
 
