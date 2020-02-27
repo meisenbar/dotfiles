@@ -62,6 +62,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
+"vue
+Plug 'posva/vim-vue' 
+
 " C#
 Plug 'sheerun/vim-polyglot'
 " Omnisharp
@@ -106,7 +109,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_theme='base16_gruvbox_dark_hard'
 
-
 " Splits
 set splitbelow
 set splitright
@@ -114,28 +116,30 @@ set splitright
 " add html syntax to dotnet razor files
 autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
-" NERDCommenter
-filetype plugin on
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
-let g:ft = ''
-function! NERDCommenter_before()
-  if &ft == 'vue'
-    let g:ft = 'vue'
-    let stack = synstack(line('.'), col('.'))
-    if len(stack) > 0
-      let syn = synIDattr((stack)[0], 'name')
-      if len(syn) > 0
-        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
-      endif
-    endif
-  endif
-endfunction
-function! NERDCommenter_after()
-  if g:ft == 'vue'
-    setf vue
-    let g:ft = ''
-  endif
-endfunction
+" NERDCommenter
+"filetype plugin on
+
+"let g:ft = ''
+"function! NERDCommenter_before()
+  "if &ft == 'vue'
+    "let g:ft = 'vue'
+    "let stack = synstack(line('.'), col('.'))
+    "if len(stack) > 0
+      "let syn = synIDattr((stack)[0], 'name')
+      "if len(syn) > 0
+        "exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      "endif
+    "endif
+  "endif
+"endfunction
+"function! NERDCommenter_after()
+  "if g:ft == 'vue'
+    "setf vue
+    "let g:ft = ''
+  "endif
+"endfunction
 
 "NERD Tree"
 let NERDTreeMinimalUI=1
@@ -166,7 +170,7 @@ cmap w!! w !sudo tee % > /dev/null
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <C-I> :Format<CR>
+nnoremap <C-I> :Prettier<CR>
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-J> <C-W><C-J>
