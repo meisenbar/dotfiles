@@ -3,9 +3,6 @@ call plug#begin('~/.vim/plugged')
 " TableMode
 Plug 'dhruvasagar/vim-table-mode'
 
-" Indent Lines
-Plug 'yggdroot/indentline'
-
 " Emmet
 Plug 'mattn/emmet-vim'
 
@@ -170,7 +167,7 @@ cmap w!! w !sudo tee % > /dev/null
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <C-I> :Prettier<CR>
+nnoremap <C-I> :Format<CR>
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-J> <C-W><C-J>
