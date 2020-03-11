@@ -64,10 +64,18 @@ Plug 'posva/vim-vue'
 
 " C#
 Plug 'sheerun/vim-polyglot'
+
 " Omnisharp
 Plug 'OmniSharp/omnisharp-vim'
 
+" Ale Linter for C#
+Plug 'w0rp/ale'
+
 call plug#end()
+
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\} 
 
 " Use UndoFiles
 " Let's save undo info!
@@ -114,29 +122,6 @@ set splitright
 autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
-" NERDCommenter
-"filetype plugin on
-
-"let g:ft = ''
-"function! NERDCommenter_before()
-  "if &ft == 'vue'
-    "let g:ft = 'vue'
-    "let stack = synstack(line('.'), col('.'))
-    "if len(stack) > 0
-      "let syn = synIDattr((stack)[0], 'name')
-      "if len(syn) > 0
-        "exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
-      "endif
-    "endif
-  "endif
-"endfunction
-"function! NERDCommenter_after()
-  "if g:ft == 'vue'
-    "setf vue
-    "let g:ft = ''
-  "endif
-"endfunction
 
 "NERD Tree"
 let NERDTreeMinimalUI=1
