@@ -26,8 +26,8 @@ Plug 'morhetz/gruvbox'
 
 "Comments"
 " Plug 'tpope/vim-commentary'
-" Plug 'tomtom/tcomment_vim'
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
+Plug 'tomtom/tcomment_vim'
 
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
