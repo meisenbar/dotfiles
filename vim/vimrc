@@ -70,12 +70,7 @@ Plug 'OmniSharp/omnisharp-vim'
 
 " Ale Linter for C#
 Plug 'w0rp/ale'
-
 call plug#end()
-
-let g:ale_linters = {
-\ 'cs': ['OmniSharp']
-\} 
 
 " Use UndoFiles
 " Let's save undo info!
@@ -121,8 +116,6 @@ set splitright
 " add html syntax to dotnet razor files
 autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
 "NERD Tree"
 let NERDTreeMinimalUI=1
 
@@ -142,13 +135,6 @@ let g:fzf_colors =
   \ "spinner": ["fg", "IncSearch"],
   \ "header":  ["fg", "WildMenu"] }
 
-" COC Configuration
-source ~/dotfiles/vim/vimrc_coc
-
-" Commands
-command Gst Gstatus
-cmap w!! w !sudo tee % > /dev/null
-
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
@@ -159,3 +145,14 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Commands
+command Gst Gstatus
+cmap w!! w !sudo tee % > /dev/null
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
+" COC Configuration
+source ~/dotfiles/vim/vimrc_coc
+
+" Omnisharp
+source ~/dotfiles/vim/vimrc_omnisharp
