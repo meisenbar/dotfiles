@@ -25,8 +25,6 @@ Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 
 "Comments"
-" Plug 'tpope/vim-commentary'
-" Plug 'scrooloose/nerdcommenter'
 Plug 'tomtom/tcomment_vim'
 
 " Editorconfig
@@ -53,23 +51,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Git integration - Fugitive
 Plug 'tpope/vim-fugitive'
 
-" Typescript
-"Plug 'leafgarland/typescript-vim' " Syntax Highlighting
-"Plug 'peitalin/vim-jsx-typescript'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-
 "vue
 Plug 'posva/vim-vue' 
 
-" C#
+" Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
 " Omnisharp
 Plug 'OmniSharp/omnisharp-vim'
 
 " Ale Linter for C#
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Use UndoFiles
@@ -84,8 +76,6 @@ set undodir=~/.vim/undo-dir
 set undofile
 
 " General VIM Settings
-"set regexpengine=1
-"set lazyredraw
 set ttyfast
 set number relativenumber 
 syntax on
