@@ -1,6 +1,9 @@
 " Note: this is required for the plugin to work
 filetype indent plugin on
 
+" Use fzf
+let g:OmniSharp_selector_ui = 'fzf'
+
 " Use the stdio OmniSharp-roslyn server
 let g:OmniSharp_server_stdio = 1
 

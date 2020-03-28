@@ -64,6 +64,9 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 call plug#end()
 
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+
 " Use UndoFiles
 " Let's save undo info!
 if !isdirectory($HOME."/.vim")
@@ -141,8 +144,8 @@ command Gst Gstatus
 cmap w!! w !sudo tee % > /dev/null
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
-" COC Configuration
-source ~/dotfiles/vim/vimrc_coc
-
 " Omnisharp
 source ~/dotfiles/vim/vimrc_omnisharp
+
+" COC Configuration
+source ~/dotfiles/vim/vimrc_coc
