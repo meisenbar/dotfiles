@@ -46,7 +46,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Language Server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'prabirshrestha/vim-lsp'
 
 " Git integration - Fugitive
 Plug 'tpope/vim-fugitive'
@@ -64,8 +63,8 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 call plug#end()
 
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
+let g:ale_sign_warning = ' '
+let g:ale_sign_error = ' '
 
 " Use UndoFiles
 " Let's save undo info!
