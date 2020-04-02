@@ -12,6 +12,10 @@ Plug 'majutsushi/tagbar'
 " Surround Brackets
 Plug 'tpope/vim-surround'
 
+" unimpaired ][ shortcuts
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
+
 " CodeSnippets
 Plug 'honza/vim-snippets'
 
@@ -63,8 +67,24 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 call plug#end()
 
+" Tell ALE to use OmniSharp for linting C# files, and no other linters.
+let g:ale_linters = {
+	\ 'cs': ['OmniSharp'],
+	\ 'javascript': ['eslint'], 
+	\ 'typescript': ['eslint'],
+	\ 'vue': ['eslint']
+\ }
+
+let g:ale_fixers = {
+	\ 'cs': ['OmniSharp'],
+	\ 'javascript': ['prettier', 'eslint'], 
+	\ 'typescript': ['prettier', 'eslint'],
+	\ 'vue': ['prettier', 'eslint']
+\ }
+
 let g:ale_sign_warning = ' '
 let g:ale_sign_error = ' '
+let g:ale_set_balloons = 1
 
 " Use UndoFiles
 " Let's save undo info!
@@ -130,7 +150,7 @@ let g:fzf_colors =
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <C-I> :Format<CR>
+nnoremap <C-I> :ALEFix<CR>
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-J> <C-W><C-J>
@@ -146,5 +166,5 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 " Omnisharp
 source ~/dotfiles/vim/vimrc_omnisharp
 
-" COC Configuration
+" Coc Configuration
 source ~/dotfiles/vim/vimrc_coc
