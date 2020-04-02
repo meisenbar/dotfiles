@@ -70,9 +70,9 @@ call plug#end()
 " Tell ALE to use OmniSharp for linting C# files, and no other linters.
 let g:ale_linters = {
 	\ 'cs': ['OmniSharp'],
-	\ 'javascript': ['eslint'], 
-	\ 'typescript': ['eslint'],
-	\ 'vue': ['eslint']
+	\ 'javascript': [], 
+	\ 'typescript': [],
+	\ 'vue': []
 \ }
 
 let g:ale_fixers = {
@@ -82,6 +82,7 @@ let g:ale_fixers = {
 	\ 'vue': ['prettier', 'eslint']
 \ }
 
+let g:ale_javascript_eslint_use_global = 0
 let g:ale_sign_warning = ' '
 let g:ale_sign_error = ' '
 let g:ale_set_balloons = 1
@@ -150,7 +151,8 @@ let g:fzf_colors =
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <C-I> :ALEFix<CR>
+nnoremap <C-I> :Format<CR>
+autocmd FileType cs nnoremap <buffer> <C-I> :OmniSharpFormatCode<CR>
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-J> <C-W><C-J>
