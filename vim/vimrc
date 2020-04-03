@@ -1,3 +1,23 @@
+" Tell ALE to use OmniSharp for linting C# files, and no other linters.
+let g:ale_linters = {
+	\ 'cs': ['OmniSharp'],
+	\ 'javascript': [], 
+	\ 'typescript': ['eslint'],
+	\ 'vue': ['eslint']
+\ }
+
+let g:ale_fixers = {
+	\ 'cs': ['OmniSharp'],
+	\ 'javascript': ['prettier', 'eslint'], 
+	\ 'typescript': ['prettier', 'eslint'],
+	\ 'vue': ['prettier', 'eslint']
+\ }
+
+let g:ale_javascript_eslint_use_global = 0
+let g:ale_sign_warning = ' '
+let g:ale_sign_error = ' '
+let g:ale_set_balloons = 1
+
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
 " TableMode
@@ -66,26 +86,6 @@ Plug 'OmniSharp/omnisharp-vim'
 " Ale Linter for C#
 Plug 'dense-analysis/ale'
 call plug#end()
-
-" Tell ALE to use OmniSharp for linting C# files, and no other linters.
-let g:ale_linters = {
-	\ 'cs': ['OmniSharp'],
-	\ 'javascript': [], 
-	\ 'typescript': [],
-	\ 'vue': []
-\ }
-
-let g:ale_fixers = {
-	\ 'cs': ['OmniSharp'],
-	\ 'javascript': ['prettier', 'eslint'], 
-	\ 'typescript': ['prettier', 'eslint'],
-	\ 'vue': ['prettier', 'eslint']
-\ }
-
-let g:ale_javascript_eslint_use_global = 0
-let g:ale_sign_warning = ' '
-let g:ale_sign_error = ' '
-let g:ale_set_balloons = 1
 
 " Use UndoFiles
 " Let's save undo info!
