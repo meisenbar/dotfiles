@@ -20,6 +20,9 @@ let g:ale_set_balloons = 1
 
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
+" Vim Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
 " TableMode
 Plug 'dhruvasagar/vim-table-mode'
 
@@ -152,13 +155,16 @@ let g:fzf_colors =
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <C-I> :Format<CR>
-autocmd FileType cs nnoremap <buffer> <C-I> :OmniSharpFormatCode<CR>
+autocmd FileType cs nnoremap <buffer> <C-I> :OmniSharpCodeFormat<CR>
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+autocmd FileType md nmap <C-S-P> <Plug>MarkdownPreviewToggle
 
 " Commands
 command Gst Gstatus
@@ -170,3 +176,7 @@ source ~/dotfiles/vim/vimrc_omnisharp
 
 " Coc Configuration
 source ~/dotfiles/vim/vimrc_coc
+
+" Source Markdown Config
+source ~/dotfiles/vim/vimrc_markdown
+
