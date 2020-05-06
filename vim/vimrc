@@ -23,6 +23,9 @@ let g:ale_set_balloons = 1
 
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
+" JsDoc
+Plug 'heavenshell/vim-jsdoc'
+
 " Vim Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
