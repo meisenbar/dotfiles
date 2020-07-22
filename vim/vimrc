@@ -24,7 +24,7 @@ let g:ale_set_balloons = 1
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
 " JsDoc
-Plug 'heavenshell/vim-jsdoc'
+Plug 'ryanoasis/vim-jsdoc'
 
 " Vim Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
@@ -95,6 +95,8 @@ Plug 'OmniSharp/omnisharp-vim'
 " Ale Linter for C#
 Plug 'dense-analysis/ale'
 call plug#end()
+
+let g:jsdoc_lehre_path = "/usr/bin/lehre"
 
 " Use UndoFiles
 " Let's save undo info!
