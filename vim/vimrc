@@ -1,5 +1,6 @@
 set nocompatible
 set mouse=a
+set nobomb
 
 " Tell ALE to use OmniSharp for linting C# files, and no other linters.
 let g:ale_linters = {
@@ -24,7 +25,10 @@ let g:ale_set_balloons = 1
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
 " JsDoc
-Plug 'heavenshell/vim-jsdoc'
+" Plug 'heavenshell/vim-jsdoc', { 
+"   \ 'for': ['javascript', 'javascript.jsx','typescript'], 
+"   \ 'do': 'make install'
+" \}
 
 " Vim Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
