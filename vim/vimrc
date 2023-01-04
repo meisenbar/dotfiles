@@ -24,12 +24,6 @@ let g:ale_set_balloons = 1
 
 " Setup Plugin
 call plug#begin('~/.vim/plugged')
-" JsDoc
-" Plug 'heavenshell/vim-jsdoc', { 
-"   \ 'for': ['javascript', 'javascript.jsx','typescript'], 
-"   \ 'do': 'make install'
-" \}
-
 " Vim Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
@@ -100,7 +94,7 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 call plug#end()
 
-let g:jsdoc_lehre_path = "/usr/bin/lehre"
+" let g:jsdoc_lehre_path = "/usr/bin/lehre"
 
 " Use UndoFiles
 " Let's save undo info!
@@ -163,11 +157,20 @@ let g:fzf_colors =
   \ "spinner": ["fg", "IncSearch"],
   \ "header":  ["fg", "WildMenu"] }
 
+" Omnisharp
+source ~/dotfiles/vim/vimrc_omnisharp
+
+" Coc Configuration
+source ~/dotfiles/vim/vimrc_coc
+
+" Source Markdown Config
+source ~/dotfiles/vim/vimrc_markdown
+
 " Keymap
 silent! nmap <C-P> :GFiles<CR>
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <C-I> :Format<CR>
-autocmd FileType cs nnoremap <buffer> <C-I> :OmniSharpCodeFormat<CR>
+nnoremap <C-Z> :Format<CR>
+" autocmd FileType cs nnoremap <buffer> <C-I> :OmniSharpCodeFormat<CR>
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-J> <C-W><C-J>
@@ -182,13 +185,4 @@ autocmd FileType md nmap <C-S-P> <Plug>MarkdownPreviewToggle
 command Gst Gstatus
 cmap w!! w !sudo tee % > /dev/null
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
-" Omnisharp
-source ~/dotfiles/vim/vimrc_omnisharp
-
-" Coc Configuration
-source ~/dotfiles/vim/vimrc_coc
-
-" Source Markdown Config
-source ~/dotfiles/vim/vimrc_markdown
 
