@@ -183,6 +183,12 @@ autocmd FileType md nmap <C-S-P> <Plug>MarkdownPreviewToggle
 
 " Commands
 command Gst Gstatus
+
+command! -bang -range=% -complete=file -nargs=* W <line1>,<line2>write<bang> <args>
+command! -bang Q quit<bang>
+command WQ wq
+command Wq wq
+
 cmap w!! w !sudo tee % > /dev/null
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
