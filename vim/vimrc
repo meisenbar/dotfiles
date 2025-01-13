@@ -123,6 +123,9 @@ set smartindent
 set autoindent
 set noexpandtab
 
+" clipboard
+set clipboard=unnamedplus
+
 " Faster Esc from Modes"
 set timeoutlen=1000 ttimeoutlen=0
 
