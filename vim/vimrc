@@ -78,6 +78,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Language Server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" nvim-lspconfig
+Plug 'neovim/nvim-lspconfig'
+
 " Git integration - Fugitive
 Plug 'tpope/vim-fugitive'
 
@@ -86,9 +89,6 @@ Plug 'posva/vim-vue'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
-
-" Omnisharp
-Plug 'OmniSharp/omnisharp-vim'
 
 " Ale Linter for C#
 Plug 'dense-analysis/ale'
@@ -161,7 +161,7 @@ let g:fzf_colors =
   \ "header":  ["fg", "WildMenu"] }
 
 " Omnisharp
-source ~/dotfiles/vim/vimrc_omnisharp
+" source ~/dotfiles/vim/vimrc_omnisharp
 
 " Coc Configuration
 source ~/dotfiles/vim/vimrc_coc

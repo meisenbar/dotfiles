@@ -6,6 +6,8 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-eslint',
   \ 'coc-jest',
+  \ '@yaegassy/coc-volar',
+  \ '@yaegassy/coc-csharp-ls',
   \]
 
 " from readme
